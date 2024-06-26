@@ -26,7 +26,7 @@
 
 "@hotwired/turbo@https://github.com/alenteria/turbo.git":
   version "8.0.4"
-  resolved "https://github.com/alenteria/turbo.git#e5ff67ef92597e0979f33421281ddb9e068acde7"
+  resolved "https://github.com/alenteria/turbo.git#754b7ef73108efbd4c62a6f4e07a22aa692a28a0"
 
 "@jridgewell/gen-mapping@^0.3.0":
   version "0.3.3"

@@ -2637,6 +2637,7 @@ class LinkPrefetchObserver {
       const cached = prefetchCache.get(event.detail.url.toString());
       if (cached) {
         event.detail.fetchRequest = cached;
+        return;
       }
       prefetchCache.clear();
     }
