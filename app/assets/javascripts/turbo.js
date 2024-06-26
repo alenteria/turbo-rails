@@ -2616,6 +2616,9 @@ class LinkPrefetchObserver {
       const link = target;
       const location = getLocationForLink(link);
       if (this.delegate.canPrefetchRequestToLocation(link, location)) {
+        if (prefetchCache.get(location.href)) {
+          return;
+        }
         this.#prefetchedLink = link;
         const fetchRequest = new FetchRequest(this, FetchMethod.get, location, new URLSearchParams, target);
         prefetchCache.setLater(location.toString(), fetchRequest, this.#cacheTtl);
