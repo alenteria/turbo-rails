@@ -2605,10 +2605,6 @@ class LinkPrefetchObserver {
       capture: true,
       passive: true
     });
-    this.eventTarget.addEventListener("mouseleave", this.#cancelRequestIfObsolete, {
-      capture: true,
-      passive: true
-    });
     this.eventTarget.addEventListener("turbo:before-fetch-request", this.#tryToUsePrefetchedRequest, true);
     this.started = true;
   };
@@ -2630,6 +2626,7 @@ class LinkPrefetchObserver {
     if (event.target === this.#prefetchedLink) this.#cancelPrefetchRequest();
   };
   #cancelPrefetchRequest=() => {
+    prefetchCache.clear();
     this.#prefetchedLink = null;
   };
   #tryToUsePrefetchedRequest=event => {
